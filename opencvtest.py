@@ -4,7 +4,7 @@ import cv2
 cap = cv2.VideoCapture(0)
 
 #select haarcascade datasets
-face_cascade = faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = faceCascade = cv2.CascadeClassifier('datasets/haarcascade_frontalface_default.xml')
 
 #set output resolutions
 cap.set(3, 1280)
