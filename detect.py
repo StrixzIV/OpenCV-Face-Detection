@@ -1,5 +1,7 @@
 import cv2
 
+print('Press \'q\' to stop')
+
 #set input as webcam 
 cap = cv2.VideoCapture(0)
 
