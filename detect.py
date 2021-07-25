@@ -23,9 +23,9 @@ while True:
     
     #detect the face
     faces = face_cascade.detectMultiScale(gray, scaleFactor = 1.2, minNeighbors = 5, minSize = (20, 20))
-    glasses = glasses_cascade.detectMultiScale(gray, scaleFactor = 1.2, minNeighbors = 5, minSize= (20, 20))
+    glasses = glasses_cascade.detectMultiScale(gray, scaleFactor = 1.2, minNeighbors = 5, minSize = (20, 20))
 
-    #Track the faces
+    #Track face positons
     for (x, y, w, h) in faces:
         #Draw rectangle on faces
         cv2.rectangle(img, (x, y), (x+w, y+h), (255, 255, 0), 3)
@@ -34,6 +34,7 @@ while True:
         roi_gray = gray[y:y + h, x:x + w]
         roi_color = img[y:y + h, x:x + w]
         
+    #Track eyes postions
     for (x, y, w, h) in glasses:
         cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 3)
         roi_gray = gray[y:y + h, x:x + w]
